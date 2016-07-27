@@ -1,7 +1,8 @@
+{{outlet}}
+
 <ul>
   {{#each model as |repo|}}
     <li>{{link-to repo.name 'users.name.repos.languages' repo.name}}</li>
   {{/each}}
 </ul>
 
-{{outlet}}

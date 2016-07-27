@@ -1,4 +1,5 @@
-{{#each-in model as |language lines|}}
-  {{language}} - {{lines}}
-{{/each-in}}
+{{bar-chart data=model}}
+{{#each model as |language|}}
+  {{language.key}} - {{language.value}}
+{{/each}}
 {{outlet}}
