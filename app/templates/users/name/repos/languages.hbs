@@ -1,5 +1,5 @@
-{{bar-chart data=model}}
-{{#each model as |language|}}
-  {{language.key}} - {{language.value}}
-{{/each}}
-{{outlet}}
+{{#if model}}
+  {{bar-chart data=model}}
+{{else}}
+  =^( Sad, no code.
+{{/if}}

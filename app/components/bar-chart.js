@@ -13,7 +13,8 @@ export default Ember.Component.extend({
     this.height = 500 - this.margin.top - this.margin.bottom;
 
     this.x = scaleBand()
-        .range([0, this.width]);
+        .range([0, this.width])
+        .padding(0.05);
 
     this.y = scaleLinear()
         .range([this.height, 0]);
@@ -78,12 +79,6 @@ export default Ember.Component.extend({
 
       svg.select(".y.axis")
         .call(this.yAxis)
-      .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", "-3.71em")
-        .style("text-anchor", "start")
-        .text("Frequency");
   },
 
   updateAxes() {

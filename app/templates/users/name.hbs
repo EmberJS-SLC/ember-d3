@@ -1,8 +1,22 @@
-{{outlet}}
+<div class="expanded row">
+  <div class="small-3 columns">
+    <table class="hover">
+      <tbody>
+      {{#each model as |repo|}}
+        <tr>
+          {{#link-to 'users.name.repos.languages' repo.name}}
+            <td>
+              {{repo.name}}
+            </td>
+          {{/link-to}}
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="small-9 columns">
+    {{outlet}}
+  </div>
+</div>
 
-<ul>
-  {{#each model as |repo|}}
-    <li>{{link-to repo.name 'users.name.repos.languages' repo.name}}</li>
-  {{/each}}
-</ul>
 
